@@ -1,0 +1,11 @@
+target/
+*.class
+*.jar
+!lib/*.jar
+*.key
+*.jks
+*.p12
+.idea/
+*.iml
+.vscode/
+.DS_Store

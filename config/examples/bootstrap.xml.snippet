@@ -1,0 +1,10 @@
+<!-- bootstrap.xml — web binding with masked keystore passwords -->
+<web path="web" rootRedirectLocation="console">
+    <binding name="artemis"
+             uri="https://localhost:8443"
+             keyStorePassword="ENC(REPLACE_WITH_MASKED_VALUE)"
+             trustStorePassword="ENC(REPLACE_WITH_MASKED_VALUE)"
+             passwordCodec="com.example.artemis.codec.AesGcmCodec;key-location=/etc/artemis/codec.key">
+        <app name="console" url="console" war="console.war"/>
+    </binding>
+</web>

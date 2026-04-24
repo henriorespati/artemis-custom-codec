@@ -1,0 +1,6 @@
+<!-- broker.xml — password masking section -->
+<password-codec>
+    com.example.artemis.codec.AesGcmCodec;key-location=/etc/artemis/codec.key
+</password-codec>
+
+<cluster-password>ENC(REPLACE_WITH_MASKED_VALUE)</cluster-password>
