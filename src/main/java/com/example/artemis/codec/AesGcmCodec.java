@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  *     com.example.artemis.codec.AesGcmCodec;key-location=/etc/artemis/codec.key
  * </password-codec>
  *
+ * <!-- notsecret -->
  * <cluster-password>ENC(masked_value_here)</cluster-password>
  * }</pre>
  *
