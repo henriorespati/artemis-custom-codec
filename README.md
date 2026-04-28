@@ -84,10 +84,10 @@ java -cp target/artemis-custom-codec-1.0.0.jar \
 
 # Output:
 # Masked value (use inside ENC(...)):
-# dGhpcyBpcyBhbiBleGFtcGxl...
+# dGhpcyBpcyBhbiBleGFtcGxl...  # notsecret
 #
 # In broker.xml / login.config:
-#   ENC(dGhpcyBpcyBhbiBleGFtcGxl...)
+#   ENC(dGhpcyBpcyBhbiBleGFtcGxl...)  # notsecret
 ```
 
 ### Step 3 — Configure broker.xml
@@ -101,6 +101,7 @@ java -cp target/artemis-custom-codec-1.0.0.jar \
     </password-codec>
 
     <!-- Wrap every masked password in ENC() -->
+    <!-- notsecret -->
     <cluster-password>ENC(dGhpcyBpcyBhbiBleGFtcGxl...)</cluster-password>
 
 </configuration>
@@ -110,6 +111,7 @@ java -cp target/artemis-custom-codec-1.0.0.jar \
 
 ```xml
 <acceptors>
+    <!-- notsecret -->
     <acceptor name="artemis">
         tcp://0.0.0.0:61616?sslEnabled=true;
         keyStorePassword=ENC(maskedKeyStorePassword);
@@ -122,6 +124,7 @@ java -cp target/artemis-custom-codec-1.0.0.jar \
 
 ```xml
 <web path="web" rootRedirectLocation="console">
+    <!-- notsecret -->
     <binding name="artemis"
              uri="https://localhost:8443"
              keyStorePassword="ENC(maskedKeyStorePassword)"
